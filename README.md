@@ -10,3 +10,4 @@ While destroying objects click on objects to destroy them
 
 Start(blue) flag defines the starting position for the player
 End(red) flag defines the ending position;Game restarts on reaching this flag.
+## Consecutive loads do not work as of yet(Loading two files one after the other).

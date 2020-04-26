@@ -254,8 +254,6 @@ public class Manager : MonoBehaviour
             foreach (Editor_data obj in foundObjects)
                 Destroy(obj.gameObject);
 
-            playerPlaced = false; 
-
             string json = File.ReadAllText(path); 
             level = JsonUtility.FromJson<Editor>(json); 
             CreateFromFile(); 
