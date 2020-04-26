@@ -7,3 +7,6 @@ While in creation menu press W,A,S,D to move the camera
 While moving objects click to select object and then W,A,S,D to move the object
 While rotating objects click to select object and use slider to rotate the objects
 While destroying objects click on objects to destroy them
+
+Start(blue) flag defines the starting position for the player
+End(red) flag defines the ending position;Game restarts on reaching this flag.
