@@ -26,7 +26,7 @@ public class Manager : MonoBehaviour
     public Text levelMessage;
     public Text coins;
     public Text Message;
-
+    public GameObject inventory;
     public Animator messageAnim;
 
     private bool itemPositionIn = true;
@@ -43,7 +43,6 @@ public class Manager : MonoBehaviour
         start_placed = false;
         end_placed = false;
     }
-
     Editor CreateEditor()
     {
         level = new Editor();
@@ -177,7 +176,7 @@ public class Manager : MonoBehaviour
     {
         user.Level_option = Selection.Level_Options.Rotate; 
         user.mr.enabled = false;
-        Message.text = " Click to select objects\n Use Slider to rotate objects";
+        Message.text = " Click to select objects\n Use Slider to rotate objects\n W,A,S,D to move the Camera";
         rotUI.SetActive(true); 
     }
 
@@ -185,7 +184,7 @@ public class Manager : MonoBehaviour
     {
         user.Level_option = Selection.Level_Options.Destroy; 
         user.mr.enabled = false;
-        Message.text = " Click to destroy objects";
+        Message.text = " Click to destroy objects\n W,A,S,D to move the Camera";
         rotUI.SetActive(false); 
     }
 

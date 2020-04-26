@@ -22,7 +22,7 @@ public class Selection : MonoBehaviour
     public Manager ms;
 
     public GameObject selected;
-    public GameObject Inventory;
+    public GameObject Inventory,Controls;
     public GameObject move_icon;
     public GameObject rot_icon;
     public ParticleSystem explode;
@@ -46,10 +46,11 @@ public class Selection : MonoBehaviour
             if (!Inventory.activeSelf)
             {
                 Inventory.SetActive(true);
-
+                Controls.SetActive(false);
             }
             else
             {
+                Controls.SetActive(true);
                 Inventory.SetActive(false);
                 mr.sprite = null;
             }
@@ -203,7 +204,7 @@ public class Selection : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(!collision.CompareTag("Background"))
         {
