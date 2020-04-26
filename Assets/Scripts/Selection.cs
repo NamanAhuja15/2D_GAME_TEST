@@ -35,6 +35,7 @@ public class Selection : MonoBehaviour
     {
         mr = GetComponent<SpriteRenderer>();
         colliding = false;
+        Controls.SetActive(false);
     }
 
 
