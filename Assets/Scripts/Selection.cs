@@ -86,7 +86,7 @@ public class Selection : MonoBehaviour
                 {
                     if (selected.GetComponent<Editor_data>().info.object_type == Player)
                         ms.playerPlaced = false;
-                    Instantiate(explode, selected.transform.position, Quaternion.identity);
+                 //   Instantiate(explode, selected.transform.position, Quaternion.identity);
                     Destroy(selected);
                 }
                 else if (colliding = true && Level_option == Level_Options.Move)
@@ -109,7 +109,7 @@ public class Selection : MonoBehaviour
                 move_icon.transform.position = movObject.transform.position;
                 Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
                 movObject.transform.Translate(input * 0.5f);
-
+                movObject.GetComponent<Editor_data>().info.location = movObject.transform.position;
             }
         }
         if (Level_option == Level_Options.Rotate)
@@ -170,6 +170,7 @@ public class Selection : MonoBehaviour
                 eo.info.rotz = newObj.transform.rotation;
                 eo.info.object_type = Player;
                 eo.selection = this.gameObject;
+                ms.coins.text = newObj.GetComponent<Player_Script>().coins.ToString();
             }
             else
                 mr.color = Color.red;

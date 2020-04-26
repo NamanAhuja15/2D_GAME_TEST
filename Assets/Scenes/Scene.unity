@@ -1251,10 +1251,12 @@ MonoBehaviour:
   playerMarker: {fileID: 0}
   rotSlider: {fileID: 617646588}
   rotUI: {fileID: 1288816463}
+  mouse: {fileID: 654921270}
+  player: {fileID: 0}
   levelName: {fileID: 9175804}
   levelNameLoad: {fileID: 1333767760}
   levelMessage: {fileID: 1727865035}
-  coins: {fileID: 0}
+  coins: {fileID: 396885328}
   Message: {fileID: 1484400913}
   inventory: {fileID: 0}
   messageAnim: {fileID: 1727865034}

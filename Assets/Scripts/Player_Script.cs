@@ -10,7 +10,6 @@ public class Player_Script : MonoBehaviour
     public bool pause;
     public int coins;
     public Manager manager;
-    public Text coin_count;
     public GameObject start_pos;
 
     private Vector3 fixed_pos;
@@ -23,7 +22,6 @@ public class Player_Script : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         cam = Camera.main.gameObject.GetComponent<Camera_script>();
-        coin_count = GameObject.FindGameObjectWithTag("Coins_count").GetComponent<Text>();
         cam.player = this.gameObject;
         cam.offset = transform.position - Camera.main.transform.position;
         Inventory = GameObject.FindGameObjectWithTag("EditorOnly").GetComponent<Canvas>();
@@ -61,7 +59,6 @@ public class Player_Script : MonoBehaviour
 
         anim.SetBool("Running", running);
         anim.SetBool("Jumping", jumping);
-        coin_count.text = coins.ToString();
     }
     void Movement()
     {
@@ -106,11 +103,14 @@ public class Player_Script : MonoBehaviour
             {
                 time_fall = 0;
             }
-            if(time_fall>5)
+            if (time_fall > 5)
             {
-                manager.GameOver();
-                if (start_pos == null)
+
+                if (start_pos != null)
+                {
+                    time_fall = 0f;
                     transform.position = start_pos.transform.position;
+                }
             }
         }
     }
@@ -130,10 +130,10 @@ public class Player_Script : MonoBehaviour
         }
         if(collision.CompareTag("End"))
             {
-            manager.GameOver();
             if(start_pos!=null)
             transform.position = start_pos.transform.position;
         }
+        
     }
     private void OnCollisionExit2D(Collision2D collision)
     {

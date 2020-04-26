@@ -21,6 +21,8 @@ public class Manager : MonoBehaviour
     public Mesh playerMarker;
     public Slider rotSlider;
     public GameObject rotUI;
+    public GameObject mouse;
+    public GameObject player;
     public InputField levelName;
     public InputField levelNameLoad;
     public Text levelMessage;
@@ -43,6 +45,7 @@ public class Manager : MonoBehaviour
         start_placed = false;
         end_placed = false;
     }
+
     Editor CreateEditor()
     {
         level = new Editor();
@@ -121,24 +124,26 @@ public class Manager : MonoBehaviour
 
     public void ChoosePlatform()
     {
-        user.itemOption = Selection.Items.Platform; 
+        user.itemOption = Selection.Items.Platform;
         GameObject platform = user.Platforms;
         mouseObject.sprite = platform.GetComponent<SpriteRenderer>().sprite;
-        
+        mouse.GetComponent<BoxCollider2D>().size = platform.GetComponent<BoxCollider2D>().size;
     }
 
     public void ChooseCoins()
     {
-        user.itemOption = Selection.Items.Coins; 
+        user.itemOption = Selection.Items.Coins;
         GameObject coins = user.Coins;
         mouseObject.sprite = coins.GetComponent<SpriteRenderer>().sprite;
+        mouse.GetComponent<BoxCollider2D>().size = coins.GetComponent<BoxCollider2D>().size;
     }
 
     public void ChooseStart()
     {
-        user.itemOption = Selection.Items.Start_pos; 
-        GameObject start = user.Start_pos; 
+        user.itemOption = Selection.Items.Start_pos;
+        GameObject start = user.Start_pos;
         mouseObject.sprite = start.GetComponent<SpriteRenderer>().sprite;
+        mouse.GetComponent<BoxCollider2D>().size = start.GetComponent<BoxCollider2D>().size;
 
     }
 
@@ -146,15 +151,16 @@ public class Manager : MonoBehaviour
     {
         user.itemOption = Selection.Items.Player;
         GameObject player = user.Player;
-        mouseObject.sprite =player.GetComponent<SpriteRenderer>().sprite; 
+        mouseObject.sprite = player.GetComponent<SpriteRenderer>().sprite;
+        mouse.GetComponent<BoxCollider2D>().size = player.GetComponent<BoxCollider2D>().size;
     }
     public void ChoosePlayerEnd()
     {
         user.itemOption = Selection.Items.End_pos;
         GameObject end = user.End_pos;
-        mouseObject.sprite=end.GetComponent<SpriteRenderer>().sprite;
+        mouseObject.sprite = end.GetComponent<SpriteRenderer>().sprite;
+        mouse.GetComponent<BoxCollider2D>().size = end.GetComponent<BoxCollider2D>().size;
     }
-
 
 
     public void ChooseCreate()
@@ -302,11 +308,7 @@ public class Manager : MonoBehaviour
         levelMessage.text = "Level loading...done.";
         messageAnim.Play("MessageFade", 0, 0);
     }
-    public void GameOver()
-    {
-        levelMessage.text = "Restarting";
-        messageAnim.Play("MessageFade", 0, 0);
-    }
+
 }
 
 
