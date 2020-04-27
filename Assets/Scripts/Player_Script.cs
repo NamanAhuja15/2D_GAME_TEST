@@ -56,6 +56,7 @@ public class Player_Script : MonoBehaviour
         {
             rb.gravityScale = 1f;
         }
+        manager.coins.text = coins.ToString();
 
         anim.SetBool("Running", running);
         anim.SetBool("Jumping", jumping);
