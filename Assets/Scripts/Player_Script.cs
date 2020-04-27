@@ -85,7 +85,7 @@ public class Player_Script : MonoBehaviour
                 transform.localScale = new Vector3(-1f, 1f, 1f);
                 facingRight = false;
             }
-            if (Input.GetKeyDown(KeyCode.Space)||input.y>0)
+            if (Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.UpArrow))
             {
                 if (grounded)
                 {
@@ -93,8 +93,6 @@ public class Player_Script : MonoBehaviour
                     rb.AddForce(new Vector2(0, jumpForce*10f));
                 }
             }
-            if (grounded)
-                jumping = false;
             if (rb.velocity.y < -0.1)
             {
                 time_fall += Time.deltaTime;
@@ -140,6 +138,7 @@ public class Player_Script : MonoBehaviour
         if(collision.gameObject.CompareTag("Ground"))
         {
             grounded = false;
+            jumping = false;
         }
     }
 }

@@ -165,8 +165,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.7
   maxSpeed: 1
-  jumpForce: 40
+  jumpForce: 70
   Inventory: {fileID: 0}
   pause: 0
   coins: 0
   manager: {fileID: 0}
+  start_pos: {fileID: 0}

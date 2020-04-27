@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757b3e20455d8e248b72ed6e8e7cd1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paused: 0
+  Inventory: {fileID: 7268554928492736207}
   player: {fileID: 0}
   user: {fileID: 654921271}
   offset: {x: 0, y: 0, z: 0}
