@@ -24,7 +24,7 @@ public class Player_Script : MonoBehaviour
         cam = Camera.main.gameObject.GetComponent<Camera_script>();
         cam.player = this.gameObject;
         cam.offset = transform.position - Camera.main.transform.position;
-        Inventory = GameObject.FindGameObjectWithTag("EditorOnly").GetComponent<Canvas>();
+        Inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Canvas>();
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>();
         anim = GetComponent<Animator>();
     }

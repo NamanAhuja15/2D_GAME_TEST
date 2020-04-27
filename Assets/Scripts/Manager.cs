@@ -40,7 +40,7 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rotSlider.onValueChanged.AddListener(delegate { RotationValueChange(); }); 
+        rotSlider.onValueChanged.AddListener(delegate { RotationValueChange(); });
         CreateEditor(); 
         start_placed = false;
         end_placed = false;
@@ -183,7 +183,8 @@ public class Manager : MonoBehaviour
         user.Level_option = Selection.Level_Options.Rotate; 
         user.mr.enabled = false;
         Message.text = " Click to select objects\n Use Slider to rotate objects\n W,A,S,D to move the Camera";
-        rotUI.SetActive(true); 
+        rotUI.SetActive(true);
+      
     }
 
     public void ChooseDestroy()
